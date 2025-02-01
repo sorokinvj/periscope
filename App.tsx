@@ -20,6 +20,7 @@ const {width, height} = Dimensions.get('window');
 
 function App(): React.JSX.Element {
   const [isConnected, setIsConnected] = useState(false);
+  const isDev = __DEV__;
 
   const handleConnect = async () => {
     try {
@@ -39,11 +40,20 @@ function App(): React.JSX.Element {
         </TouchableOpacity>
       ) : (
         <View style={styles.cameraContainer}>
-          <UVCCamera
-            style={styles.camera}
-            autoFocus={true}
-            whiteBalance="auto"
-          />
+          {isDev ? (
+            // Заглушка для режима разработки
+            <View style={[styles.camera, styles.devMode]}>
+              <Text style={styles.devText}>
+                Camera Preview (Development Mode)
+              </Text>
+            </View>
+          ) : (
+            <UVCCamera
+              style={styles.camera}
+              autoFocus={true}
+              whiteBalance="auto"
+            />
+          )}
         </View>
       )}
     </SafeAreaView>
@@ -86,6 +96,15 @@ const styles = StyleSheet.create({
   camera: {
     width: width,
     height: height,
+  },
+  devMode: {
+    backgroundColor: '#333',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  devText: {
+    color: '#fff',
+    fontSize: 16,
   },
 });
 

@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 import {UVCCamera} from 'react-native-uvc-camera';
 
+const isDev = __DEV__;
+
 export const useUVCCamera = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -16,6 +18,11 @@ export const useUVCCamera = () => {
 
   const connect = async () => {
     try {
+      if (isDev) {
+        // В режиме разработки просто имитируем подключение
+        setIsConnected(true);
+        return;
+      }
       await UVCCamera.connect();
       setIsConnected(true);
       setError(null);
