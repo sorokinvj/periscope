@@ -5487,6 +5487,11 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-uvc-camera@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-uvc-camera/-/react-native-uvc-camera-2.0.2.tgz#aaa103f079404f4fecd1325c7f3c6fe3618a148e"
+  integrity sha512-9CCS7r2dwVUKZhAq7aPgeCsiFbFTditmvnAtHKIIbGPnuwigk4CLaJ+5NJHNh3xIuSeqo0gsoXoQ9ZpwaR8MgQ==
+
 react-native@0.77.0:
   version "0.77.0"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.77.0.tgz#ef194e6305cefde43d7ba5d242ceb9a1fddf9578"
